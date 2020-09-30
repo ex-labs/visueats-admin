@@ -17,7 +17,7 @@
                         <button type="submit" class="w-100 f6 link dim br1 ph3 pv2 mb2 dib white ve_primary_bg">Login</button>
                     </div>
                 </form>
-                <div class="mv3 w-100 tc link underline"><a>Forgot your password?</a></div>
+                <div class="mv3 w-100 tc link underline"><a @click="cta">Forgot your password?</a></div>
                 <div class="tc"> Form Input Debug: {{ login }}</div>
             </div><!-- /Form Container -->
             <div class="cta-container mw7 center flex pt4 pb2 ve_accent_bg white fw5">
@@ -69,5 +69,9 @@ import "firebase/auth";
 <style scoped>
     button {
         border:none;
+    }  
+
+    a {
+        cursor: pointer;
     }
 </style>
