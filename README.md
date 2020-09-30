@@ -1,4 +1,6 @@
-# vedash
+# vedash - visuEats Admin Dashboard
+
+This is the admin dashboard application that allows restaurant owners to manager their account, menus along with other extended features related to the customer focused mobile app.
 
 ## Project setup
 ```
