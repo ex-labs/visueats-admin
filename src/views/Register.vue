@@ -29,6 +29,8 @@
 <script>
 
 //import firebase
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
     export default {
         data() {
@@ -42,12 +44,15 @@
         }, //data
         methods: {
             async pressed() {
-                //try {
-                    //console.log('hello')
-                //}.catch(err) {
-                    //console.log(err)
-                //}
-            }
+                try {
+                    const user = firebase.auth().createUserWithEmailAndPassword(this.register.email, this.register.password)
+                    console.log(user);
+                    this.$router.replace({name: "Demo"});
+                    alert("Success");
+                }  catch(err) {
+                    console.log(err)
+                } //try
+            } //pressed
         } //methods
     }
 </script>
