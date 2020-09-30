@@ -35,6 +35,8 @@
 <script>
 
 //import firebase
+import * as firebase from "firebase/app";
+import "firebase/auth";
 
     export default {
         data() {
@@ -42,16 +44,20 @@
                 login: {
                     email: '',
                     password: '',
+                    error: ''
                 }
             }
         }, //data
         methods: {
             async pressed() {
-                //try {
-                    //console.log('hello')
-                //}.catch(err) {
-                    //console.log(err)
-                //}
+                try {  
+                    const userval = await firebase.auth().signInWithEmailAndPassword(this.login.email, this.login.password)
+                    console.log(userval);
+                    this.$router.replace({name:"Demo"})
+
+                }catch(err) {
+                    console.log(err)
+                }
             }, //pressed
             cta () {
                 alert("Trigger Secret Contact Form")
