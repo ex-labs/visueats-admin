@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>
-      This is the pre-production <span>Admin Panel</span> MVAP that is being built upon for<br>
+      This is the pre-production <span class="fw6">Admin Panel</span> <span class="underline">MVP</span> that is being built upon for<br>
       subsequent launch to production as part of version 1.0.0 of the application suite.<br>
       See: <a href="http://presenting.xyz/presenting/visueats/" target="_blank" rel="noopener">visuEats Platform documentation</a>.
     </p>
