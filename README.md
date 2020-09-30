@@ -2,9 +2,10 @@
 
 This is the admin dashboard application that allows restaurant owners to manager their account, menus along with other extended features related to the customer focused mobile app.
 
-Author: Justin Ritchie / EX Labs ( EX Media Inc )
-
-Prepared for: Sophronia Mckenzie ( visuEats Imagery Solutions LLC )
+Included CDN files
+https://animate.style/
+http://tachyons.io/
+https://materializecss.com/icons.html
 
 ## Product Documentation
 http://presenting.xyz/presenting/visueats/
