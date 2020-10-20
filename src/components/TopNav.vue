@@ -1,7 +1,7 @@
 <template>
     <div id="nav">
         <nav class="flex justify-between bb b--white-10 ve_primary_bg">
-            <a class="logo link white-70 hover-white no-underline flex items-center pa3" href="">
+            <a class="logo link white-70 hover-white no-underline flex items-center pa3" href="" @click="backHome">
                 <img src="../assets/ve_light.png" alt="VisuEats">
             </a>
             <div class="flex-grow pa3 flex items-center">
@@ -52,6 +52,9 @@ import "firebase/auth";
             },
             signIn() {
                 this.$router.replace({name:"Login"})
+            },
+            backHome() {
+                this.$router.replace({ name:"Dashhome"})
             }
         } //Methods
     }

@@ -53,7 +53,7 @@ import "firebase/auth";
                 try {  
                     const userval = await firebase.auth().signInWithEmailAndPassword(this.login.email, this.login.password)
                     console.log(userval);
-                    this.$router.replace({name:"Demo"})
+                    this.$router.replace({name:"Dashhome"})
 
                 }catch(err) {
                     console.log(err)

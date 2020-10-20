@@ -7,6 +7,12 @@ import router from './router'
 Vue.config.productionTip = false
 Vue.use(Vuex)
 
+const store = new Vuex.Store({
+  state: {
+    //userstate: loggedout
+  },
+})
+
 //Firebase Config on EX acct
 const firebaseConfig = {
   apiKey: "AIzaSyBoRo7374SssRmP-gODLUucbNiKIdcoqIg",
@@ -31,6 +37,7 @@ firebase.auth().onAuthStateChanged(user => {
   if(!app) {
     app = new Vue({
       router,
+      store,
       render: h => h(App)
     }).$mount('#app')
   }
