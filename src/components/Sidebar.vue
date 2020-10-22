@@ -6,8 +6,8 @@
             </div><!-- /RM element -->
             <div class="tc">
                 <img src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h4 w4 dib ba b--black-05 pa2" title="Photo of a kitty staring at you">
-                <h1 class="f3 mb2">Mimi W.</h1>
-                <h2 class="f6 fw4 white-70 mt0">Role: <span>{{ role }}</span></h2>
+                <h1 class="f3 mb2"><span class="capitalize">{{ getUser ? getUser.name : "" }}</span></h1>
+                <h2 class="f6 fw4 white-70 mt0">Role: <span>{{ userRole ? userRole.split('_').join(' ')  : '' }}</span></h2>
             </div>
         </div>
         <div class="sidebar-menu bt">
@@ -15,7 +15,7 @@
                 <li class="white f4 pv2 ph4">
                     <router-link to="/dashboard" class="white flex"><i class="material-icons pr3">addchart</i> Dashboard</router-link>
                 </li>
-                <li class="white f4 pv2 ph4">
+                <li class="white f4 pv2 ph4" v-if="userRole=='super_admin'">
                     <router-link to="/app-roles" class="white flex"><i class="material-icons pr3">people</i> App Roles</router-link>
                 </li>
                 <li class="white f4 pv2 ph4">
@@ -45,9 +45,6 @@
 <script>
     export default {
         name: 'Sidebar',
-        props: {
-            role: String
-        }
     }
 </script>
 

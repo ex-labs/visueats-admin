@@ -10,7 +10,10 @@ Included CDN libraries
 ## Product Documentation
 http://presenting.xyz/presenting/visueats/
 
-
+## Roles as to be added in users/{uid}/role
+ 1 . super_admin
+ 2. admin 
+ 3.editor
 ## Project setup
 ```
 yarn install
