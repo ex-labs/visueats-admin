@@ -1,7 +1,7 @@
 <template>
   <div class="home pt5">
-    <img class="pa4 animate__animated animate__bounce" alt="VE logo" src="../assets/ve_color.png">
-    <HelloWorld msg="Welcome to the visuEats Admin Panel"/>
+    <img class="pv4 w-25 animate__animated animate__bounce" alt="VE logo" src="../assets/ve_color.png">
+    <HelloWorld msg="myMenu"/>
   </div>
 </template>
 

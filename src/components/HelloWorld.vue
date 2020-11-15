@@ -1,17 +1,17 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      This is the pre-production <span class="fw6">Admin Panel</span> <span class="underline">MVP</span> that is being built upon for<br>
-      subsequent launch to production as part of version 1.0.0 of the application suite.<br>
-      See: <a href="http://presenting.xyz/presenting/visueats/" target="_blank" rel="noopener">visuEats Platform documentation</a>.
-    </p>
-    <h3>This is a Vue.JS App - Installed CLI Plugins</h3>
+    <h1 class="f1 ph5">Welcome to the visuEats <span class="underline">{{ msg }}</span> Dashboard</h1>
+    <!-- p>
+      Are you a Restaurant owner?<br>
+    </p -->
+    <h3>Download the Mobile App</h3>
     <ul>
-      <li>Vuex</li>
-      <li>Vue Router</li>
-      <li>Firebase</li>
+      <li>Apple App Store Icon</li>
+      <li>Google Play Icon</li>
     </ul>
+    <div style="position:absolute; width:100%; bottom: 10px;">
+      <p style="font-size:12px">Admin resource: <a href="http://presenting.xyz/presenting/visueats/" target="_blank" rel="noopener">visuEats Platform documentation</a>. Remove for <span class="fw6">Production</span>.</p>
+    </div>
   </div>
 </template>
 
