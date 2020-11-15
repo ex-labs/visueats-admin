@@ -12,9 +12,9 @@
         <router-link to="/" class="f6 link dib white dim mr3 mr4-ns"
           >Home</router-link
         >
-        <router-link to="/demo" class="f6 link dib white dim mr3 mr4-ns"
+        <!-- router-link to="/demo" class="f6 link dib white dim mr3 mr4-ns"
           >Demo</router-link
-        >
+        -->
         <router-link to="/register" class="f6 link dib white dim mr3 mr4-ns"
           >Register</router-link
         >

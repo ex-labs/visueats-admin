@@ -23,7 +23,7 @@
           </select>
         </div>
         <div class="admin_list bt pv3">
-          <p class="i">Fetch and loop through Admin Array</p>
+          <p class="i">A list of Admins</p>
           <ul class="list pl0 mt0 measure center">
             <template v-for="(v, k) in allUsers">
               <li
@@ -116,4 +116,9 @@ export default {
 };
 </script>
 <style scoped>
+
+  .main-content {
+    overflow: scroll;
+  }
+
 </style>

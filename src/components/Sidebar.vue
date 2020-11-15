@@ -2,10 +2,10 @@
     <div class="sidebar fl w-20 pv2 vh-100">
         <div class="sidebar-top pv3 ph2 white">
             <div class="white-70 f6 lh-copy mb3"><!-- remove for production -->
-                Component: Sidebar Menu
+                headshot_url: 
             </div><!-- /RM element -->
             <div class="tc">
-                <img src="http://tachyons.io/img/avatar_1.jpg" class="br-100 h4 w4 dib ba b--black-05 pa2" title="Photo of a kitty staring at you">
+                <img :src="tempimg" class="br-100 h4 w4 dib ba b--black-05 pa2" title="">
                 <h1 class="f3 mb2"><span class="capitalize">{{ getUser ? getUser.name : "" }}</span></h1>
                 <h2 class="f6 fw4 white-70 mt0">Role: <span>{{ userRole ? userRole.split('_').join(' ')  : '' }}</span></h2>
             </div>
@@ -45,6 +45,10 @@
 <script>
     export default {
         name: 'Sidebar',
+        created(){
+            this.tempimg = "https://secure.exlabs.us/img/jnr_2019.jpg";
+            console.log("YO");
+        }
     }
 </script>
 

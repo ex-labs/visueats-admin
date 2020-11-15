@@ -14,6 +14,9 @@ const store = new Vuex.Store({
         },
         userRole(s) {
             return s.user ? s.user.role : null
+        },
+        userImage(s){
+            return s.user ? s.user.headshot : null
         }
     },
     mutations: {
