@@ -13,3 +13,10 @@ Override Styles for VE theme
     background: rgba(178,210,52,255);
 }
 
+.ve_light_bg {
+    background: #e5f6f6;
+}
+
+.ve_dark_bg {
+    background: #036669;
+}

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h4>App Roles Widget Component</h4>
-        <p>This feature is not yet available.</p>
+        <h4 class="f3">App Roles Widget</h4>
+        <p class="animate__animated animate__headShake animate__infinite">Update in Progress...</p>
     </div>
 </template>
 
