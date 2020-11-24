@@ -15,16 +15,16 @@ import HelpCenter from '../views/HelpCenter.vue'
 
 import * as firebase from "firebase/app";
 import "firebase/auth";
-
+// for checking if user is super admin or not
+import store from '../store/index'
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Home',
     component: Home
   },
-  { 
+  {
     path: '/demo',
     name: 'Demo',
     component: Demo
@@ -48,43 +48,76 @@ const routes = [
     path: '/dashboard',
     name: 'Dashhome',
     component: Dashhome,
-    meta: {requiresAuth: true}
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/app-roles',
     name: 'AppRoles',
     component: AppRoles,
-    meta: {requiresAuth: true}
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/design-studio',
     name: 'DesignStudio',
     component: DesignStudio,
-    meta: {requiresAuth: true}
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/manage-pages',
     name: 'ManagePages',
     component: ManagePages,
-    meta: {requiresAuth: true}
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/manage-menu',
     name: 'ManageMenu',
     component: ManageMenu,
-    meta: {requiresAuth: true}
+    meta: {
+      requiresAuth: true
+    }
+  }, {
+    path: '/manage-resturants',
+    name: 'ManageResturants',
+    component: () => import('../views/ManageResturants'),
+    meta: {
+      requiresAuth: true
+    },
+    beforeEnter: (_to, _from, next) => {
+      // ... 
+      if (store.getters.userRole == 'super_admin') {
+        next()
+      } else {
+        //go to demo 
+        next('/demo')
+      }
+    }
   },
+
+
+
   {
     path: '/settings',
     name: 'Settings',
     component: Settings,
-    meta: {requiresAuth: true}
+    meta: {
+      requiresAuth: true
+    }
   },
   {
     path: '/help',
     name: 'HelpCenter',
     component: HelpCenter,
-    meta: {requiresAuth: true}
+    meta: {
+      requiresAuth: true
+    }
   }
 ]
 
@@ -94,12 +127,13 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to, from, next)=> {
+router.beforeEach((to, from, next) => {
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
   const isAuthenticated = firebase.auth().currentUser;
-  if(requiresAuth && !isAuthenticated){
+  if (requiresAuth && !isAuthenticated) {
     next("/login");
-  }else {
+  } else {
+
     next();
   }
 })

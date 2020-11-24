@@ -6,6 +6,8 @@ import 'firebase/database'
 import router from './router'
 import store from './store'
 import '@/utils/mixins'
+
+import vuetify from './plugins/vuetify'
 Vue.config.productionTip = false
 //Firebase Config on EX acct
 const firebaseConfig = {
@@ -42,6 +44,7 @@ firebase.auth().onAuthStateChanged(user => {
     if (!app) {
       app = new Vue({
         router,
+        vuetify,
         store,
         render: h => h(App)
       }).$mount('#app')
