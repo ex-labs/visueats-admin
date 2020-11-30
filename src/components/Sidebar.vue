@@ -48,7 +48,7 @@
             to="/manage-resturants"
             v-if="userRole == 'super_admin'"
             class="white flex"
-            ><i class="material-icons pr3">map</i> Returants</router-link
+            ><i class="material-icons pr3">map</i> Restaurants</router-link
           >
         </li>
         <li class="white f4 pv2 ph4">

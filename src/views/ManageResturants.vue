@@ -7,7 +7,7 @@
           <h1 class="mb0">Manage Resturant</h1>
           <p class="mv0">
             This is the Dashboard home of the
-            <span class="fw6">Menu Admin</span>. Authentication Required.
+            <span class="fw6">Super Admin</span> Authentication Required.
           </p>
         </div>
         <div class="w-100">
