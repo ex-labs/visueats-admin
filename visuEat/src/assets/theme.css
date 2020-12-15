@@ -1,0 +1,22 @@
+/* 
+
+Override Styles for VE theme
+
+*/
+
+
+.ve_primary_bg {
+    background: #00A8AC;
+}
+
+.ve_accent_bg {
+    background: rgba(178,210,52,255);
+}
+
+.ve_light_bg {
+    background: #e5f6f6;
+}
+
+.ve_dark_bg {
+    background: #036669;
+}
