@@ -1,43 +1,18 @@
 <template>
   <div>
-    <v-container>
-      <v-row v-if="!loading">
-        <v-col md="4" v-for="(v, k) in menu.items" :key="k">
-          <router-link
-            :to="
-              '/restaurants/' +
-              $route.params.restaurantSlug +
-              '/' +
-              $route.params.menuSlug +
-              '/' +
-              v.slug
-            "
-            style="text-decoration: none"
-          >
-            <v-card>
-              <v-card-title primary-title> {{ v.name }}</v-card-title>
-              <v-card-text>
-                <img
-                  :src="v.image"
-                  width="200"
-                  height="200"
-                  style="object-fit: cover; object-position: center"
-                />
-              </v-card-text>
-            </v-card>
-          </router-link>
-        </v-col>
-      </v-row>
-      <v-row v-else>
-        <v-col>
-          <v-progress-circular
-            indeterminate
-            size="70"
-            color="primary"
-          ></v-progress-circular>
-        </v-col>
-      </v-row>
-    </v-container>
+   
+
+    <v-card>
+      <v-card-title primary-title> {{ item.name }}</v-card-title>
+      <v-card-text>
+        <img
+          :src="item.image"
+          width="200"
+          height="200"
+          style="object-fit: cover; object-position: center"
+        />
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
@@ -47,6 +22,7 @@ export default {
     return {
       restaurant: null,
       menu: null,
+      item: null,
       loading: true,
     };
   },
@@ -54,6 +30,8 @@ export default {
     this.$nextTick(() => {
       var slug = this.$route.params.restaurantSlug;
       var menuSlug = this.$route.params.menuSlug;
+      var itemSlug = this.$route.params.itemSlug;
+
       // this will get only the first matching record in the database which matched with the slug
       this.$fb
         .database()
@@ -79,16 +57,31 @@ export default {
               }
               if (menu) {
                 this.menu = menu;
+                var item;
+                var itemsArray = menu.items;
+                console.log("items ", itemsArray);
+                for (var j in itemsArray) {
+                  if (itemsArray[j].slug && itemsArray[j].slug == itemSlug) {
+                    item = itemsArray[j];
+                    break;
+                  }
+                }
+                this.item = item;
                 this.loading = false;
               } else {
+                console.log("the slug from item is not found");
+
                 this.$router.push("/restaurants");
               }
             } else {
+              console.log("the slug from menu is not found");
+
               this.$router.push("/restaurants");
             }
           } else {
             // slug is expired OR undefined
             // go back to restaurants
+            console.log("the slug from resturant is not found");
             this.$router.push("/restaurants");
           }
         });

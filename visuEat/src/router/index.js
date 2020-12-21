@@ -18,6 +18,10 @@ import Restaurants from '../views/Restaurants/AllRestaurants.vue'
 import RestaurantMenuView from '../views/Restaurants/Menus/View.vue'
 import currentMenu from '../views/Restaurants/Menus/AllMenusOfCurrentRestaurants.vue'
 import menuItem from '../views/Restaurants/Menus/MenuItem.vue'
+import itemDetails from '../views/Restaurants/Menus/MenuItemDetails.vue'
+import menuItemView from '../views/Restaurants/Menus/MenuItemView.vue'
+
+
 
 import * as firebase from "firebase/app";
 import "firebase/auth";
@@ -145,7 +149,17 @@ const routes = [{
           {
             path: ':menuSlug',
             name: 'menuItem',
-            component: menuItem
+            component: menuItemView,
+            children:[
+              {
+                path:'',
+                component: menuItem
+              },
+              {
+                path:':itemSlug',
+                component:itemDetails
+              },
+            ]
           },
         ]
       }
